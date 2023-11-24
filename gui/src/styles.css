@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+label {
+  margin: 6px 0;
+  display: block;
+  margin-bottom: 10px;
+  align-self: stretch;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+}
+
+p {
+  margin-top: 16px;
+  align-self: end;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.password-messages p {
+  margin: 5px 0;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+}
+
+.status-column {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.lead-item {
+  background-color: #f7f7f7;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.lead-item:active {
+  cursor: grabbing;
+}
+
+.invalid {
+  color: red;
+}
+
+.required-marker {
+  color: red;
+  margin-left: 2px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.label-right {
+  text-align: left;
+  padding: 2px;
+}
