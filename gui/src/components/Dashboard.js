@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import "../styles.css";
 import LeadFormModal from "./LeadFormModal";
@@ -16,6 +16,11 @@ const Dashboard = ({ onLogout }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedLead, setSelectedLead] = useState(null);
 
+  useEffect(() => {
+    const storedLeads = JSON.parse(localStorage.getItem("leads")) || [];
+    setLeads(storedLeads);
+  }, []);
+
   const onDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -30,6 +35,7 @@ const Dashboard = ({ onLogout }) => {
       movedLead.status = destinationStatus;
 
       setLeads(updatedLeads);
+      localStorage.setItem("leads", JSON.stringify(updatedLeads));
     }
   };
 
@@ -62,7 +68,7 @@ const Dashboard = ({ onLogout }) => {
     const updatedLeads = [...leads, newLead];
     setLeads(updatedLeads);
 
-    localStorage.setItem("leads", JSON.stringify(leads));
+    localStorage.setItem("leads", JSON.stringify(updatedLeads));
 
     toast.success("Lead Cadastrada com sucesso!");
 
@@ -83,7 +89,7 @@ const Dashboard = ({ onLogout }) => {
           style={{ width: "100%", marginBottom: "20px" }}
         />
         <div className="button-container">
-          <button onClick={onLogout}>Logout</button>
+          <button onClick={onLogout}>Sair</button>
           <button onClick={handleAddLead}>Adicionar Lead</button>
         </div>
       </div>
