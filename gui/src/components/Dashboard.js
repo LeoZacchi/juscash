@@ -83,7 +83,7 @@ const Dashboard = ({ onLogout }) => {
           style={{ width: "100%", marginBottom: "20px" }}
         />
         <div className="button-container">
-          <button onClick={onLogout}>Logout</button>
+          <button onClick={onLogout}>Sair</button>
           <button onClick={handleAddLead}>Adicionar Lead</button>
         </div>
       </div>

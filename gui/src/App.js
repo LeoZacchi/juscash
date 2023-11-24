@@ -39,6 +39,7 @@ const App = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("authenticated");
+    localStorage.removeItem("leads");
     console.log("Logout");
     setAuthenticated(false);
   };
